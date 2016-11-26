@@ -1,0 +1,51 @@
+// {
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "启动扩展",
+//             "type": "extensionHost",
+//             "request": "launch",
+//             "runtimeExecutable": "${execPath}",
+//             "args": [
+//                 "--extensionDevelopmentPath=${workspaceRoot}"
+//             ],
+//             "sourceMaps": true,
+//             "outFiles": [
+//                 "${workspaceRoot}/out/**/*.js"
+//             ],
+//             "preLaunchTask": "npm"
+//         }
+//     ]
+// }
+
+{
+"version": "0.2.0",
+"configurations": [
+{
+"name": "Nodejs",
+"type": "node", 
+"request": "launch",
+"program": "${workspaceRoot}/index.js", //这个配置成你要调试的文件
+"stopOnEntry": false,
+"args": [],
+"cwd": "${workspaceRoot}/.",
+"runtimeExecutable": null,
+"runtimeArgs": [
+"--nolazy"
+],
+"env": {
+"NODE_ENV": "development"
+},
+"externalConsole": false,
+"preLaunchTask": "",
+"sourceMaps": false,
+"outDir": null
+},
+{
+"name": "Attach",
+"type": "node",
+"request": "attach",
+"port": 5858
+}
+]
+}
