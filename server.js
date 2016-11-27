@@ -1,13 +1,13 @@
 let http = require("http")
 let url = require("url")
 
-function start(route) {
+function start(route,handle) {
     function onRequest(req, res) {
         var pathname = url.parse(req.url).pathname
         console.log("收到来自 " + pathname +" 的请求")
 
-        route(pathname)
-        
+        route(pathname,handle)
+
         res.writeHead(200, {
             "Content-Type": "text/plain"
         })
