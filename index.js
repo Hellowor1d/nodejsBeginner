@@ -6,3 +6,8 @@ var handle= {}
 handle['/'] = requestHandler.start
 handle['/upload'] = requestHandler.upload
 server.start(router.route,handle)
+// 继续开发
+
+
+                    
+
