@@ -19,3 +19,4 @@ function start(route,handle) {
 console.log("服务已启动")
 }
 exports.start = start
+//貌似linuxmint版本没有上传成功
