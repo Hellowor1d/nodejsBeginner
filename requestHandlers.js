@@ -1,6 +1,7 @@
 //  //请求处理函数
 
-var querystring = require("querystring");
+var querystring = require("querystring"),
+    fs = reqruire("fs")
  function start(res, postData) {
 
      console.log("start 发来的访问请求已收到，在处理")
@@ -21,6 +22,7 @@ var querystring = require("querystring");
     res.write(body);
     res.end();
 }
+
 function upload(res, postData) {
   console.log("Request handler 'upload' was called.");
   res.writeHead(200, {"Content-Type": "text/plain"});
@@ -29,7 +31,23 @@ function upload(res, postData) {
   res.end();
 }
 
+function show(res, postData){
+  console.log("收到来自 show 的请求")
+fs.readFile("/tmp/test.png", "binary", function(error, file){
+    if(error){
+      res.writeHead(500, {"Content-Type": "text/plain"})
+      res.write(error + "\n")
+      res.end()
+    } else {
+      res.writeHead(200, {"Content-Type":"image/png"})
+      res.write(file, "binary")
+      res.end()
+
+    }
+})
+}
 
 
  exports.start = start
  exports.upload = upload
+ exports.show = show
