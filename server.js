@@ -3,8 +3,7 @@ var url = require("url")
 
 function start(route,handle) {                    
         function onRequest(req, res) {
-
-            var postData =""
+            
             var pathname = url.parse(req.url).pathname
             console.log("收到来自 " + pathname +" 的请求")
                 route(pathname,handle, res, req)
