@@ -1,7 +1,7 @@
 //  //请求处理函数
 
 var querystring = require("querystring"),
-    fs = reqruire("fs")
+    fs = require("fs")
  function start(res, postData) {
 
      console.log("start 发来的访问请求已收到，在处理")
@@ -12,8 +12,8 @@ var querystring = require("querystring"),
     'charset=UTF-8" />'+
     '</head>'+
     '<body>'+
-    '<form action="/upload" method="post">'+
-    '<textarea name="text" rows="20" cols="60"></textarea>'+
+    '<form action="/upload" method="post" enctype="multipart/form-data">'+
+    '<input type="file" name="upload">'+
     '<input type="submit" value="Submit text" />'+
     '</form>'+
     '</body>'+
