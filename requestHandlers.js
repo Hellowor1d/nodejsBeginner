@@ -1,4 +1,4 @@
-//  //请求处理函数
+//请求处理函数
 
 var querystring = require("querystring"),
     fs = require("fs"),
@@ -47,10 +47,6 @@ form.parse(req, function(error, fields, files){
   res.end()
 })
 
-  // res.writeHead(200, {"Content-Type": "text/plain"});
-  // res.write("刚刚提交了的内容为: "+
-  // querystring.parse(postData).text);
-  // res.end();
 }
 
 function show(res) {
@@ -58,7 +54,6 @@ function show(res) {
   res.writeHead(200, {"Content-Type": "image/png"});
   fs.createReadStream("/tmp/test.png").pipe(res);
 }
-
 
  exports.start = start
  exports.upload = upload
